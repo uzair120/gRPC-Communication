@@ -1,0 +1,17 @@
+{
+  "name": "grpc-communication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "uzair120@outlook.com",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1288.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  }
+}
