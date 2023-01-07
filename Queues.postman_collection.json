@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "9ee79636-d9a8-48e1-8d36-7c2a0e2528b6",
+		"name": "Queues",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3236061"
+	},
+	"item": [
+		{
+			"name": "available-queues",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/simple-sqs/available-queues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"simple-sqs",
+						"available-queues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Queue URL By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/simple-sqs/getURLByName/mysqs",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"simple-sqs",
+						"getURLByName",
+						"mysqs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mySQS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/simple-sqs/create",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"simple-sqs",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"myNewSQS\",\n    \"message\": \"this is a message\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/simple-sqs/sendMessage/mySQS",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"simple-sqs",
+						"sendMessage",
+						"mySQS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Receive Message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"myNewSQS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{r_url}}/simple-sqs/receiveMessages/mySQS",
+					"host": [
+						"{{r_url}}"
+					],
+					"path": [
+						"simple-sqs",
+						"receiveMessages",
+						"mySQS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete queue",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/simple-sqs/delete/mySQS2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"simple-sqs",
+						"delete",
+						"mySQS2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "r_url",
+			"value": "localhost:3001",
+			"type": "string"
+		}
+	]
+}
